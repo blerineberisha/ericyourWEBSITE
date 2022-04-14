@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <div class="mode">
+      <button onclick="darkMode()" id="dork">dork?</button>            
+  </div>
     <h2>
         come on eric you can do it 
         <br> 
@@ -26,7 +29,7 @@
     <div id="fullRange" name="range">
     </div>
     <div>Right: <span id="correctDisplay">0</span>&nbsp;&nbsp;&nbsp; Wrong: <span id="wrongDisplay">0</span></div>
-    <div>Stats: <span id="stats"></span>% correct</span></div>
+    <div>Stats: <span id="stats">0</span>% correct</span></div>
     </div>
 
     <div id="dayBtnsWrap"></div>
@@ -37,14 +40,26 @@
     const correctDisplay = document.getElementById("correctDisplay");
     const wrongDisplay = document.getElementById("wrongDisplay");
     const statisticsBro = document.getElementById("stats");
+    const dork = document.getElementById("dork");
     const WEEKDAYS = getWeekdaysArray();
     let theDate = new Date(Math.random() * Date.now());
     let correct = 0;
     let wrong = 0;
-    let all = correct + wrong;
-    
+   
+    dork.addEventListener("click", ()=>{
+      if(dork.innerText === "dork?"){
+        dork.innerText = "light?";
+      }else{
+        dork.innerText= "dork?";
+      }
+    });
 
     setNewRandomDay();
+
+    function darkMode() {
+      var element = document.body;
+      element.classList.toggle("dark-mode");
+    }
 
     function getWeekdaysArray() {
       let x = new Date("11/27/2021");
@@ -98,9 +113,10 @@
         setTimeout(() => document.getElementById(weekday).classList.add("wrong"), 0);
       }
       correctDisplay.innerText = correct;
-      wrongDisplay.innerText = wrong;
-      let stat = correct/all;
-      stat = stat*100;
+      wrongDisplay.innerText = wrong; 
+      let all = correct + wrong;
+      let stat = (correct/all) * 100;
+      stat = Math.round((stat + Number.EPSILON) * 100 / 100);
       statisticsBro.innerText = stat.toString();
       setNewRandomDay();
     }

@@ -12,14 +12,15 @@ body {
 #stats{
     display: auto;
 }
+.dark-mode, .dark-buttons {
+  background-color: black;
+  color: white;
+}
 body {
   margin: 0;
   display: flex;
   flex-flow: column;
   align-items: center;
-}
-h1 {
-  text-align: center;
 }
 p {
   margin: 2rem;
