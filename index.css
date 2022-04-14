@@ -1,0 +1,92 @@
+html {
+  margin: 0;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+h1,
+h2,
+body {
+  font-family: "Comic Sans MS";
+  text-align: center;
+}
+#stats{
+    display: auto;
+}
+body {
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+h1 {
+  text-align: center;
+}
+p {
+  margin: 2rem;
+  margin-top: 0;
+  line-height: 1.3rem;
+  max-width: 800px;
+}
+#radios {
+  font-size: 16px;
+  margin-bottom: 1em;
+}
+#dateDisplay {
+  font-size: 30px;
+}
+#dayBtnsWrap {
+  margin-top: 1rem;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+#dayBtnsWrap > button {
+  font-family: "Comic Sans MS";
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-size: 18px;
+  padding: 10px;
+  width: 13%;
+  min-width: max-content;
+  background-color: #ddd;
+  border: 2px solid black;
+  margin: 0.5%;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  #dayBtnsWrap {
+    flex-flow: column nowrap;
+  }
+  #dayBtnsWrap > button {
+    width: 10rem;
+    margin: 2px;
+  }
+}
+.wrong {
+  animation-name: wrong;
+  animation-duration: 3s;
+}
+@keyframes wrong {
+  from {
+    background-color: #f00;
+  }
+  to {
+    background-color: #ddd;
+  }
+}
+.correct {
+  animation-name: correct;
+  animation-duration: 3s;
+}
+@keyframes correct {
+  from {
+    background-color: #0f0;
+  }
+  to {
+    background-color: #ddd;
+  }
+}
