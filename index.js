@@ -8,12 +8,13 @@ const WEEKDAYS = getWeekdaysArray();
 let theDate = new Date(Math.random() * Date.now());
 let correct = 0;
 let wrong = 0;
+let count = 0;
 
 dork.addEventListener("click", () => {
   var element = document.body;
   element.classList.toggle("dark-mode");
   if (dork.innerText === "dork?") {
-    dork.innerText = "light?";
+    dork.innerText = "leight?";
   } else {
     dork.innerText = "dork?";
   }
@@ -50,7 +51,7 @@ for (let day of WEEKDAYS) {
 
 function setNewRandomDay() {
   document.querySelectorAll("button.buttons").forEach((elem) => {
-    elem.style.backgroundColor="#ddd";
+    elem.style.backgroundColor = "#ddd";
     elem.disabled = false;
   });
   let range = 500 * 365 * 24 * 60 * 60 * 1000;
@@ -58,8 +59,10 @@ function setNewRandomDay() {
   let rand = center + Math.random() * range - Math.random() * range;
   theDate = new Date(rand);
   dateDisplay.innerText = getFormattedDate(theDate);
+  count = count + 1;
 }
 
+setNewRandomDay();
 function guessDay(weekday) {
   const correctDay = getWeekday(theDate);
   console.log(correctDay);
@@ -81,7 +84,59 @@ function guessDay(weekday) {
   });
 }
 
-/* for (let day of WEEKDAYS) {
-  let btn = document.getElementById(day);
-  dayBtnsWrap.removeChild(btn);
-} */
+if (count == 10) {
+  window.location.replace("./result.html");
+}
+
+// STOPWATCH
+const timer = document.getElementById("stopwatch");
+var isRunning = false;
+var value = 0;
+var startTime = 0;
+var interval;
+
+function getValue() {
+  return isRunning ? Date.now() - startTime : value;
+}
+
+function start() {
+  if (isRunning) return;
+  isRunning = true;
+  startTime = Date.now() - value;
+  interval = setInterval(render, 1000);
+}
+
+function stop() {
+  if (!isRunning) return;
+
+  isRunning = false;
+  value = Date.now() - startTime;
+  clearInterval(interval);
+  render();
+}
+
+function reset() {
+  if (isRunning) {
+    startTime = Date.now();
+  } else {
+    value = 0;
+  }
+  render();
+}
+
+function lz(value) {
+  return (value < 10 ? "0" : "") + value;
+}
+
+function render() {
+  var val = getValue(),
+    v = Math.abs(val);
+
+  var seconds = Math.floor(v / 1000) % 60,
+    minutes = Math.floor(v / 60000) % 60;
+  timer.innerHTML = minutes + " min " + seconds + " s";
+}
+
+function resetTimer() {
+  timer.innerHTML = "00:00:00";
+}
