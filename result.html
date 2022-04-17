@@ -20,40 +20,8 @@
       <div>Time: <span id="stopwatchResult"></span></div>
       </div>
       <div><button id="next" onclick="aeagen()">aeagen</button></div>
-      <div id="privmessage">well done bitch</div>
-      <script>
-        const correctDisplay = document.getElementById("correctDisplay");
-        const wrongDisplay = document.getElementById("wrongDisplay");
-        const statisticsBro = document.getElementById("stats");
-        const timeRes = document.getElementById('stopwatchResult');
-        const message = document.getElementById('privmessage');
-          dork.addEventListener("click", () => {
-            var element = document.body;
-            element.classList.toggle("leight-mode");
-            if (dork.innerText === "dork?") {
-                dork.innerText = "leight?";
-            } else {
-                dork.innerText = "dork?";
-            }
-          });
-          
-          const queryString = window.location.search;
-            const search = new URLSearchParams(queryString);
-            const time = search.get('time');
-            console.log(time);
-            const wrong = search.get('wrong');
-            const correct = search.get('correct');
-            let stat = (correct / 10) * 100;
-            stat = Math.round(((stat + Number.EPSILON) * 100) / 100);
-            statisticsBro.innerText = stat;
-            let min = Math. floor((time/1000/60) << 0);
-            let sec = Math. floor((time/1000) % 60); 
-            timeRes.innerText = min + " min " + sec + " s";
-            wrongDisplay.innerText = wrong;
-            correctDisplay.innerText = correct;
-            function aeagen() {
-                window.location.href = "index.html";
-            }
+      <div id="privmessage">wär en 4er. 4 gewinnt oder so.</div>
+      <script src="result.js">
       </script>
 </body>
 </html>
