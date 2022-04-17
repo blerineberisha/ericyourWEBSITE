@@ -1,118 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>date stuf</title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet" />
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <div class="mode"">
-      <button onclick="darkMode()" id="dork">dork?</button>            
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>date stuf</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body onload="setNewRandomDay()">
+  <div class="mode">
+    <button onclick="darkMode()" id="dork">dork?</button>
   </div>
-    <div id="dateDisplay"></div>
-    <div id="fullRange" name="range">
-    </div>
-    <div>Right: <span id="correctDisplay">0</span>&nbsp;&nbsp;&nbsp; Wrong: <span id="wrongDisplay">0</span></div>
-    <div>Stats: <span id="stats">0</span>% correct</span></div>
-    </div>
+  <div id="dateDisplay"></div>
+  <div id="fullRange" name="range">
+  </div>
+  <div>Right: <span id="correctDisplay">0</span>&nbsp;&nbsp;&nbsp; Wrong: <span id="wrongDisplay">0</span></div>
+  <div>Stats: <span id="stats">0</span>% correct</span></div>
+  </div>
+  <div id="dayBtnsWrap">
+  </div>
+  <button id="next" onclick="setNewRandomDay()">next</button>
+  <div>
+    come on eric you can do it
+    <br>
+    pave the way put your back into it
+    <br>
+    tell us why, show us how
+    <br>
+    LOOK AT WHERE YOU CAME FROM
+    <br>
+    <em>LOOK AT YOU NOW</em>
+  </div>
+  <script src="index.js"></script>
 
-    <div id="dayBtnsWrap"></div>
-    <button id="next" onclick="setNewRandomDay()">next</button>
-    <h2>
-      come on eric you can do it 
-      <br> 
-      pave the way put your back into it
-      <br>
-      tell us why, show us how
-      <br>
-      LOOK AT WHERE YOU CAME FROM
-  </h2>
-      <h1>
-          LOOK AT YOU NOW
-      </h1>
-  <script>
-    const dateDisplay = document.getElementById("dateDisplay");
-    const dayBtnsWrap = document.getElementById("dayBtnsWrap");
-    const correctDisplay = document.getElementById("correctDisplay");
-    const wrongDisplay = document.getElementById("wrongDisplay");
-    const statisticsBro = document.getElementById("stats");
-    const dork = document.getElementById("dork");
-    const WEEKDAYS = getWeekdaysArray();
-    let theDate = new Date(Math.random() * Date.now());
-    let correct = 0;
-    let wrong = 0;
-
-    dork.addEventListener("click", ()=>{
-      if(dork.innerText === "dork?"){
-        dork.innerText = "light?";
-      }else{
-        dork.innerText= "dork?";
-      }
-    });
-
-    setNewRandomDay();
-
-    function darkMode() {
-      var element = document.body;
-      element.classList.toggle("dark-mode");
-    }
-
-    function getWeekdaysArray() {
-      let x = new Date("11/28/2021");
-      const arr = [];
-      for (let i = 0; i < 7; i++) {
-        x.setDate(x.getDate() + 1);
-        arr.push(getWeekday(x));
-      }
-      return arr;
-    }
-    
-      for (let day of WEEKDAYS) {
-        let btn = document.createElement("button");
-        btn.innerHTML = day;
-        btn.id = day;
-        btn.className = "days"
-        btn.onclick = () => guessDay(day);
-        dayBtnsWrap.appendChild(btn);
-      }
-
-    function getFormattedDate(date) {
-      let options = { year: "numeric", month: "long", day: "numeric" };
-      return date.toLocaleDateString("default", options);
-    }
-
-    function getWeekday(date) {
-      options = { weekday: "long" };
-      return date.toLocaleDateString("default", options);
-    }
-
-    function setNewRandomDay() {
-      let range = 400 * 365 * 24 * 60 * 60 * 1000;
-      let center = Date.now();
-      let rand = center + Math.random() * range - Math.random() * range;
-      theDate = new Date(rand);
-      dateDisplay.innerText = getFormattedDate(theDate);
-    }
-
-    function guessDay(weekday) {
-      const correctDay = getWeekday(theDate);
-      if (weekday == getWeekday(theDate)) {
-        correct++;
-      } else {
-        wrong++;
-      }
-      correctDisplay.innerText = correct;
-      wrongDisplay.innerText = wrong; 
-      let all = correct + wrong;
-      let stat = (correct/all) * 100;
-      stat = Math.round((stat + Number.EPSILON) * 100 / 100);
-      statisticsBro.innerText = stat.toString();
-      setNewRandomDay();
-    }
-  </script>
 </html>
-
