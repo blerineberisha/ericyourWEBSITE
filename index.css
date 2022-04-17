@@ -8,8 +8,8 @@ body {
   font-family: "Comic Sans MS";
   text-align: center;
   font-size: medium;
-  background-color: #999;
-  color: #222;
+  background-color: #222;
+  color: #ddd;
 }
 link{
   color: black;
@@ -17,9 +17,9 @@ link{
 #stats {
   display: auto;
 }
-.dark-mode {
-  background-color: #222;
-  color: #ddd;
+.leight-mode {
+  background-color: #999;
+  color: #222;
 }
 body {
   margin-top: 0.5rem;
@@ -27,7 +27,7 @@ body {
   flex-flow: column;
   align-items: center;
 }
-#dork, #next, #stopwatch {
+#dork, #next,#stopwatch{
   margin-top: 0.5rem;
   color: black;
   height: 1.5rem;
@@ -35,6 +35,7 @@ body {
   border: 1px solid black;
   background-color: #ddd;
 }
+
 p {
   margin: 2rem;
   margin-top: 0;

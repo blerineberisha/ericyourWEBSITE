@@ -9,17 +9,19 @@ let theDate = new Date(Math.random() * Date.now());
 let correct = 0;
 let wrong = 0;
 let count = 0;
+let all;
+let stat;
 
+setNewRandomDay();
 dork.addEventListener("click", () => {
   var element = document.body;
-  element.classList.toggle("dark-mode");
+  element.classList.toggle("leight-mode");
   if (dork.innerText === "dork?") {
     dork.innerText = "leight?";
   } else {
     dork.innerText = "dork?";
   }
 });
-
 function getWeekdaysArray() {
   let x = new Date("11/28/2021");
   const arr = [];
@@ -59,13 +61,17 @@ function setNewRandomDay() {
   let rand = center + Math.random() * range - Math.random() * range;
   theDate = new Date(rand);
   dateDisplay.innerText = getFormattedDate(theDate);
-  count = count + 1;
+  if (count == 10) {
+    var time = document.getElementById("stopwatch");
+    window.location.href = "result.html?time="+getValue() + "&wrong=" + wrong + "&correct=" + correct;
+    time.innerHTML = getValue().toString();
+    stop();
+  }
 }
 
-setNewRandomDay();
 function guessDay(weekday) {
+  count = count + 1;
   const correctDay = getWeekday(theDate);
-  console.log(correctDay);
   document.getElementById(correctDay).style.backgroundColor = "#2AAA8A";
   if (weekday === correctDay) {
     correct++;
@@ -75,17 +81,13 @@ function guessDay(weekday) {
   }
   correctDisplay.innerText = correct;
   wrongDisplay.innerText = wrong;
-  let all = correct + wrong;
-  let stat = (correct / all) * 100;
+  all = correct + wrong;
+  stat = (correct / all) * 100;
   stat = Math.round(((stat + Number.EPSILON) * 100) / 100);
   statisticsBro.innerText = stat.toString();
   document.querySelectorAll("button.buttons").forEach((elem) => {
     elem.disabled = true;
   });
-}
-
-if (count == 10) {
-  window.location.replace("./result.html");
 }
 
 // STOPWATCH
@@ -108,11 +110,8 @@ function start() {
 
 function stop() {
   if (!isRunning) return;
-
   isRunning = false;
   value = Date.now() - startTime;
-  clearInterval(interval);
-  render();
 }
 
 function reset() {
