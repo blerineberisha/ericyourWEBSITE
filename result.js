@@ -16,7 +16,6 @@ dork.addEventListener("click", () => {
 const queryString = window.location.search;
 const search = new URLSearchParams(queryString);
 const time = search.get("time");
-console.log(time);
 const wrong = search.get("wrong");
 const correct = search.get("correct");
 let stat = (correct / 10) * 100;
