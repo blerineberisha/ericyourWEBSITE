@@ -1,9 +1,30 @@
 html {
   margin: 0;
   font-size: 20px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Comic Sans MS";
 }
-h1,h2,
+.blink {
+  animation: blinkingBackground 0.5s infinite;
+}
+@keyframes blinkingBackground {
+  0% {
+    background-color: #10c018;
+  }
+  25% {
+    background-color: #1056c0;
+  }
+  50% {
+    background-color: #ef0a1a;
+  }
+  75% {
+    background-color: #254878;
+  }
+  100% {
+    background-color: #04a1d5;
+  }
+}
+h1,
+h2,
 body {
   font-family: "Comic Sans MS";
   text-align: center;
@@ -11,7 +32,7 @@ body {
   background-color: #222;
   color: #ddd;
 }
-link{
+link {
   color: black;
 }
 #stats {
@@ -27,13 +48,20 @@ body {
   flex-flow: column;
   align-items: center;
 }
-#dork, #next,#stopwatch, #practice{
+#dork,
+#next,
+#stopwatch,
+#practice,
+#partyyyyy {
+  font-family: "Comic Sans MS";
   margin-top: 0.5rem;
   color: black;
   height: 2rem;
   border-radius: 20px;
   border: 1px solid black;
   background-color: #ddd;
+  width: 5rem;
+  display: inline-block;
 }
 
 p {
@@ -41,10 +69,6 @@ p {
   margin-top: 0;
   line-height: 1.3rem;
   max-width: 800px;
-}
-#radios {
-  font-size: 16px;
-  margin-bottom: 1em;
 }
 #dateDisplay {
   font-size: 30px;
@@ -59,6 +83,7 @@ p {
   justify-content: center;
   align-items: center;
 }
+
 #dayBtnsWrap > button {
   font-family: "Comic Sans MS";
   color: black;
@@ -72,6 +97,7 @@ p {
   border: 2px solid black;
   margin: 0.5%;
   cursor: pointer;
+  display: inline-block;
 }
 @media (max-width: 500px) {
   #dayBtnsWrap {
@@ -82,10 +108,10 @@ p {
     margin: 2px;
   }
 }
-.wrong > button{
+.wrong > button {
   background-color: #f00;
 }
-.correct > button{
+.correct > button {
   background-color: #0f0;
 }
 
@@ -124,5 +150,5 @@ p {
 }
 
 #reset {
-  all:initial;
+  all: initial;
 }

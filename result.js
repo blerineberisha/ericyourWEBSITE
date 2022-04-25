@@ -12,7 +12,16 @@ dork.addEventListener("click", () => {
     dork.innerText = "dork?";
   }
 });
-
+const partay = document.getElementById("partyyyyy")
+  partay.addEventListener("click", () => {
+    var element = document.body;
+    element.classList.toggle("blink");
+    if (partay.innerText === "stOOOOPpp") {
+      partay.innerText = "partyyyyy";
+    } else {
+      partay.innerText = "stOOOOPpp";
+    }
+  });
 const queryString = window.location.search;
 const search = new URLSearchParams(queryString);
 const time = search.get("time");
@@ -26,6 +35,7 @@ let sec = Math.floor((time / 1000) % 60);
 timeRes.innerText = min + " min " + sec + " s";
 wrongDisplay.innerText = wrong;
 correctDisplay.innerText = correct;
+
 
 function aeagen() {
   window.location.href = "challenge.html";
