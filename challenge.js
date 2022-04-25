@@ -22,16 +22,16 @@ dork.addEventListener("click", () => {
     dork.innerText = "dork?";
   }
 });
-const partay = document.getElementById("partyyyyy")
-  partay.addEventListener("click", () => {
-    var element = document.body;
-    element.classList.toggle("blink");
-    if (partay.innerText === "stOOOOPpp") {
-      partay.innerText = "partyyyyy";
-    } else {
-      partay.innerText = "stOOOOPpp";
-    }
-  });
+const partay = document.getElementById("partyyyyy");
+partay.addEventListener("click", () => {
+  var element = document.body;
+  element.classList.toggle("blink");
+  if (partay.innerText === "stOOOOPpp") {
+    partay.innerText = "partyyyyy";
+  } else {
+    partay.innerText = "stOOOOPpp";
+  }
+});
 function getWeekdaysArray() {
   let x = new Date("11/28/2021");
   const arr = [];
@@ -73,7 +73,8 @@ function setNewRandomDay() {
   dateDisplay.innerText = getFormattedDate(theDate);
   if (count == 10) {
     var time = document.getElementById("stopwatch");
-    window.location.href = "result.html?time="+getValue() + "&wrong=" + wrong + "&correct=" + correct;
+    window.location.href =
+      "result.html?time=" + getValue() + "&wrong=" + wrong + "&correct=" + correct;
     time.innerHTML = getValue().toString();
     stop();
   }
@@ -94,7 +95,7 @@ function guessDay(weekday) {
   all = correct + wrong;
   stat = (correct / all) * 100;
   stat = Math.round(((stat + Number.EPSILON) * 100) / 100);
-  statisticsBro.innerText = stat.toString();
+  statisticsBro.innerText = stat;
   document.querySelectorAll("button.buttons").forEach((elem) => {
     elem.disabled = true;
   });
@@ -111,9 +112,9 @@ function getValue() {
   return isRunning ? Date.now() - startTime : value;
 }
 
-  isRunning = true;
-  startTime = Date.now() - value;
-  interval = setInterval(render, 1000);
+isRunning = true;
+startTime = Date.now() - value;
+interval = setInterval(render, 1000);
 
 function stop() {
   if (!isRunning) return;
