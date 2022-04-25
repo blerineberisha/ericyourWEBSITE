@@ -26,8 +26,9 @@ let sec = Math.floor((time / 1000) % 60);
 timeRes.innerText = min + " min " + sec + " s";
 wrongDisplay.innerText = wrong;
 correctDisplay.innerText = correct;
+
 function aeagen() {
-  window.location.href = "index.html";
+  window.location.href = "challenge.html";
 }
 if (parseInt(wrong) >= 5) {
   message.innerText = "dude das wär nödemal en 4er. machs besser";
