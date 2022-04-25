@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'Comic Sans MS';
+  font-family: 'Comic-hihi';
   src: url(sans.ttf);
 }
 html {
   margin: 0;
   font-size: 20px;
-  font-family: "Comic Sans MS";
+  font-family: 'Comic-hihi';
 }
 .blink {
   animation: blinkingBackground 0.5s infinite;
@@ -30,7 +30,7 @@ html {
 h1,
 h2,
 body {
-  font-family: "Comic Sans MS";
+  font-family: "Comic-hihi";
   text-align: center;
   font-size: medium;
   background-color: #222;
@@ -56,7 +56,7 @@ body {
 #next,
 #stopwatch,
 #practice {
-  font-family: "Comic Sans MS";
+  font-family: "Comic-hihi";
   margin-top: 0.5rem;
   color: black;
   height: 2rem;
@@ -68,7 +68,7 @@ body {
 }
 
 #partyyyyy {
-  font-family: "Comic Sans MS";
+  font-family: "Comic-hihi";
   margin-top: 0.5rem;
   color: black;
   height: 2rem;
@@ -113,7 +113,7 @@ p {
 }
 
 #dayBtnsWrap > button {
-  font-family: "Comic Sans MS";
+  font-family: "Comic-hihi";
   color: black;
   border-radius: 20px;
   box-sizing: border-box;
@@ -154,7 +154,7 @@ p {
   align-items: center;
 }
 .dayBtnsWrap > button {
-  font-family: "Comic Sans MS";
+  font-family: "Comic-hihi";
   color: black;
   border-radius: 20px;
   box-sizing: border-box;
