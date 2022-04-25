@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'Comic-hihi';
+  src: url(sans.ttf);
+}
 html {
   margin: 0;
   font-size: 20px;
