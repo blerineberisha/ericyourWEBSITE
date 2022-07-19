@@ -13,6 +13,7 @@ let all;
 let stat;
 
 setNewRandomDay();
+
 dork.addEventListener("click", () => {
   var element = document.body;
   element.classList.toggle("leight-mode");
