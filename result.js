@@ -48,6 +48,7 @@ let min1 = Math.floor((avg / 1000 / 60) << 0);
 let sec1 = ((avg / 1000) % 60);
 sec1 = Math.round(sec1*10)/10;
 avgtime.innerText = sec1 + " s"
+console.log(avgtime.innerText);
 
 function aeagen() {
   window.location.href = "challenge.html";
