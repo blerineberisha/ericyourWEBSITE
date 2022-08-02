@@ -4,6 +4,7 @@ const statisticsBro = document.getElementById("stats");
 const timeRes = document.getElementById("stopwatchResult");
 const message = document.getElementById("privmessage");
 const partay = document.getElementById("partyyyyy");
+const avgtime = document.getElementById("avg")
 
 let queryString = window.location.search;
 const search = new URLSearchParams(queryString);
@@ -42,6 +43,11 @@ let sec = Math.floor((time / 1000) % 60);
 timeRes.innerText = min + " min " + sec + " s";
 wrongDisplay.innerText = wrong;
 correctDisplay.innerText = correct;
+let avg = Number.parseFloat(time)/10;
+let min1 = Math.floor((avg / 1000 / 60) << 0);
+let sec1 = ((avg / 1000) % 60);
+sec1 = Math.round(sec1*10)/10;
+avgtime.innerText = min1 + " min " + sec1 + " s"
 
 function aeagen() {
   window.location.href = "challenge.html";
@@ -49,7 +55,7 @@ function aeagen() {
 if (parseInt(wrong) >= 5) {
   message.innerText = "dude das wär nödemal en 4er. machs besser";
 }
-if(parseInt(wrong)==4){
+if (parseInt(wrong) == 4) {
   message.innerText = "ein idiot sagte mal '4 gewinnt' oder so";
 
 }

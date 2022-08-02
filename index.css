@@ -2,11 +2,13 @@
   font-family: 'Comic-hihi';
   src: url(sans.ttf);
 }
+
 html {
   margin: 0;
   font-size: 20px;
   font-family: "Comic-hihi";
 }
+
 h1,
 h2,
 body {
@@ -16,42 +18,53 @@ body {
   background-color: #222;
   color: #ddd;
 }
+
 .blink {
-    animation: blinkingBackground 0.5s infinite;
+  animation: blinkingBackground 0.5s infinite;
+}
+
+@keyframes blinkingBackground {
+  0% {
+    background-color: #10c018;
   }
-  @keyframes blinkingBackground {
-    0% {
-      background-color: #10c018;
-    }
-    25% {
-      background-color: #1056c0;
-    }
-    50% {
-      background-color: #ef0a1a;
-    }
-    75% {
-      background-color: #254878;
-    }
-    100% {
-      background-color: #04a1d5;
-    }
+
+  25% {
+    background-color: #1056c0;
   }
+
+  50% {
+    background-color: #ef0a1a;
+  }
+
+  75% {
+    background-color: #254878;
+  }
+
+  100% {
+    background-color: #04a1d5;
+  }
+}
+
 link {
   color: black;
 }
+
 #stats {
   display: auto;
 }
+
 .leight-mode {
   background-color: #999;
   color: #222;
 }
+
 body {
   margin-top: 0.5rem;
   display: flex;
   flex-flow: column;
   align-items: center;
 }
+
 #dork,
 #next,
 #practice {
@@ -75,13 +88,11 @@ body {
   width: 5rem;
   display: inline-block;
   animation: slidebg 5s linear infinite;
-  background-image: linear-gradient(
-    90deg,
-    #00c0ff 0%,
-    #ffcf00 49%,
-    #fc4f4f 80%,
-    #00c0ff 100%
-  );
+  background-image: linear-gradient(90deg,
+      #00c0ff 0%,
+      #ffcf00 49%,
+      #fc4f4f 80%,
+      #00c0ff 100%);
 }
 
 @keyframes slidebg {
@@ -96,9 +107,11 @@ p {
   line-height: 1.3rem;
   max-width: 800px;
 }
+
 #dateDisplay {
   font-size: 30px;
 }
+
 #dayBtnsWrap {
   margin-top: 1rem;
   margin: 1rem auto;
@@ -109,7 +122,8 @@ p {
   justify-content: center;
   align-items: center;
 }
-#dayBtnsWrap > button {
+
+#dayBtnsWrap>button {
   font-family: "Comic-hihi";
   color: black;
   border-radius: 20px;
@@ -124,19 +138,23 @@ p {
   cursor: pointer;
   display: inline-block;
 }
+
 @media (max-width: 500px) {
   #dayBtnsWrap {
     flex-flow: column nowrap;
   }
-  #dayBtnsWrap > button {
+
+  #dayBtnsWrap>button {
     width: 10rem;
     margin: 2px;
   }
 }
-.wrong > button {
+
+.wrong>button {
   background-color: #f00;
 }
-.correct > button {
+
+.correct>button {
   background-color: #0f0;
 }
 
@@ -150,7 +168,8 @@ p {
   justify-content: center;
   align-items: center;
 }
-.dayBtnsWrap > button {
+
+.dayBtnsWrap>button {
   font-family: "Comic-hihi";
   color: black;
   border-radius: 20px;
@@ -164,11 +183,13 @@ p {
   margin: 0.5%;
   cursor: pointer;
 }
+
 @media (max-width: 500px) {
   .dayBtnsWrap {
     flex-flow: column nowrap;
   }
-  .dayBtnsWrap > button {
+
+  .dayBtnsWrap>button {
     width: 10rem;
     margin: 2px;
   }
