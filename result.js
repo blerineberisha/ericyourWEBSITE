@@ -30,11 +30,8 @@ partay.addEventListener("click", () => {
 });
 
 const time = search.get("time");
-console.log(time)
 const wrong = search.get("wrong");
-console.log(wrong)
 const correct = search.get("correct");
-console.log(correct)
 let stat = (correct / 10) * 100;
 stat = Math.round(((stat + Number.EPSILON) * 100) / 100);
 statisticsBro.innerText = stat;
@@ -46,7 +43,7 @@ correctDisplay.innerText = correct;
 let avg = time/10;
 let min1 = Math.floor((avg / 1000 / 60) << 0);
 let sec1 = ((avg / 1000) % 60);
-sec1 = Math.round(sec1*10)/10;
+sec1 = sec1.toFixed(2);
 avgtime.innerText = sec1 + " s"
 console.log(avgtime.innerText);
 
