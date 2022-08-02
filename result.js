@@ -4,7 +4,7 @@ const statisticsBro = document.getElementById("stats");
 const timeRes = document.getElementById("stopwatchResult");
 const message = document.getElementById("privmessage");
 const partay = document.getElementById("partyyyyy");
-const avgtime = document.getElementById("avg")
+const avgtime = document.getElementById("avg");
 
 let queryString = window.location.search;
 const search = new URLSearchParams(queryString);
