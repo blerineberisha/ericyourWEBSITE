@@ -81,7 +81,7 @@ function setNewRandomDay() {
     window.location.href =
       "3date_result.html?time=" + getValue() + "&wrong=" + wrong + "&correct=" + correct + 
       "&date1=" + dates[0] + "&date2=" + dates[1] + "&date3=" + dates[2] +
-      "&guess1=" + guesses[0] + "&guess2=" + guesses[1] + "&guess3=" +guesses[2];
+      "&guess1=" + guesses[0] + "&guess2=" + guesses[1] + "&guess3=" + guesses[2];
     time.innerHTML = getValue().toString();
     stop();
   }
