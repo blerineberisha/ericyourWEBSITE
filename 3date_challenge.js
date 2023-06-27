@@ -75,7 +75,7 @@ function setNewRandomDay() {
   if (count == 3) {
     var time = document.getElementById("stopwatch");
     window.location.href =
-      "result.html?time=" + getValue() + "&wrong=" + wrong + "&correct=" + correct;
+      "3date_result.html?time=" + getValue() + "&wrong=" + wrong + "&correct=" + correct;
     time.innerHTML = getValue().toString();
     stop();
   }
