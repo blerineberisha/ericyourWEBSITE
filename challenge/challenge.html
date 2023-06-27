@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>date stuf</title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="./../assets/index.css" />
 </head>
 
 <body>
@@ -23,13 +23,22 @@
   <div id="dayBtnsWrap">
   </div>
   <div>
-    <button id="next" onclick="window.location.href='practice.html'">
-      practice
-    </button>
-    <button id="next" onclick="window.location.href='challenge.html'">
-      challenge
-    </button>
-    <button id="next" onclick="setNewRandomDay()">next</button>
+    <div>
+      <button id="next" onclick="window.location.href='./../challenge/challenge.html'">
+        challenge
+      </button>
+      <button id="practice" onclick="window.location.href='./../practice/practice.html'">
+        practice
+      </button>
+    </div>
+    <div>
+      <button id="next" onclick="window.location.href='./../3date/3date_challenge.html'">
+        3 date challenge
+      </button>
+      <button id="next" onclick="window.location.href='./../chooseyourfighter/chooseyourfighter.html'">
+        2 truths 1 lie
+      </button>
+    </div>
     <div>
       come on eric you can do it
       <br>
@@ -41,6 +50,6 @@
       <br>
       <em>LOOK AT YOU NOW</em>
     </div>
-    <script src="3date_challenge.js"></script>
+    <script src="challenge.js"></script>
 
 </html>
