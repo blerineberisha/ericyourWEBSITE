@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>date stuf</title>
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="index.css" />
-      </head>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <title>date stuf</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
 <body>
     <div class="mode">
         <button onclick="darkMode()" id="dork">leight?</button>
         <button onclick="partyyyyy()" id="partyyyyy">partyyyyy</button>
-      </div>
-      <div>Right: <span id="correctDisplay">0</span>&nbsp;&nbsp;&nbsp; Wrong: <span id="wrongDisplay">0</span></div>
-      <div>Stats: <span id="stats">0</span>% correct</span></div>
-      <div>Avg. time/date: <span id="avg"></span></div>
-      <div>Time: <span id="stopwatchResult"></span></div>
-      </div>
-      <div>
+    </div>
+    <div>Right: <span id="correctDisplay">0</span>&nbsp;&nbsp;&nbsp; Wrong: <span id="wrongDisplay">0</span></div>
+    <div>Stats: <span id="stats">0</span>% correct</span></div>
+    <div>Avg. time/date: <span id="avg"></span></div>
+    <div>Time: <span id="stopwatchResult"></span></div>
+    </div>
+    <div>
         <button id="next" onclick="aeagen()">3 date challenge</button>
         <button id="practice" onclick="window.location.href='practice.html'">practice</button>
         <button id="next" onclick="window.location.href='challenge.html'">challenge</button>
-      </div>
-      <div id="privmessage"></div>
-      <script src="3date_result.js">
-      </script>
+    </div>
+    <div id="privmessage"></div>
+    <div>All dates: </div>
+    <div id="solutions">
+        <div class="date">
+            <div id="date1"></div>
+            <div><b>Guess: </b><span id="guess1"></span></div>
+        </div>
+        <div class="date">
+            <div id="date2"></div>
+            <div><b>Guess: </b><span id="guess2"></span></div>
+        </div>
+        <div class="date">
+            <div id="date3"></div>
+            <div><b>Guess: </b><span id="guess3"></span></div>
+        </div>
+    </div>
+    <script src="3date_result.js">
+    </script>
 </body>
+
 </html>

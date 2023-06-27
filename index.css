@@ -74,7 +74,7 @@ body {
   border-radius: 20px;
   border: 1px solid black;
   background-color: #ddd;
-  width: 5rem;
+  width: fit-content;
   font-family: "Comic-hihi";
 }
 
@@ -197,4 +197,12 @@ p {
 
 #reset {
   all: initial;
+}
+
+.date{
+  margin-top: 10%;
+  padding: 10px;
+  border: solid white 1px;
+  border-radius: 20px;
+  width: 100%;
 }

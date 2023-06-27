@@ -5,6 +5,10 @@ const wrongDisplay = document.getElementById("wrongDisplay");
 const statisticsBro = document.getElementById("stats");
 const dork = document.getElementById("dork");
 const WEEKDAYS = getWeekdaysArray();
+var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+let index = 0;
+let dates = [];
+let guesses = [];
 let theDate = new Date(Math.random() * Date.now());
 let correct = 0;
 let wrong = 0;
@@ -75,7 +79,14 @@ function setNewRandomDay() {
   if (count == 10) {
     var time = document.getElementById("stopwatch");
     window.location.href =
-      "result.html?time=" + getValue() + "&wrong=" + wrong + "&correct=" + correct;
+    "challenge_result.html?time=" + getValue() + "&wrong=" + wrong + "&correct=" + correct + 
+    "&date1=" + dates[0] + "&date2=" + dates[1] + "&date3=" + dates[2] + "&date4=" + dates[3] +
+    "&date5=" + dates[4] + "&date6=" + dates[5] + "&date7=" + dates[6] + "&date8=" + dates[7] +
+    "&date9=" + dates[8] + "&date10=" + dates[9] +
+    "&guess1=" + guesses[0] + "&guess2=" + guesses[1] + "&guess3=" + guesses[2] +
+    "&guess4=" + guesses[3] + "&guess5=" + guesses[4] + "&guess6=" + guesses[5] +
+    "&guess7=" + guesses[6] + "&guess8=" + guesses[7] + "&guess9=" + guesses[8] +
+    "&guess10=" + guesses[9];
     time.innerHTML = getValue().toString();
     stop();
   }
@@ -100,6 +111,9 @@ function guessDay(weekday) {
   document.querySelectorAll("button.buttons").forEach((elem) => {
     elem.disabled = true;
   });
+  dates[index] = theDate.toDateString();
+  guesses[index] = weekday;
+  index += 1;
 }
 
 // STOPWATCH
