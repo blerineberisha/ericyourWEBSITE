@@ -48,7 +48,7 @@ avgtime.innerText = sec1 + " s"
 console.log(avgtime.innerText);
 
 function aeagen() {
-  window.location.href = "challenge.html";
+  window.location.href = "3date_challenge.html";
 }
 if (parseInt(wrong) >= 5) {
   message.innerText = "dude das wär nödemal en 4er. machs besser";
