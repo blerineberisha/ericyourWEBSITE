@@ -24,15 +24,15 @@ dork.addEventListener("click", () => {
 });
 
 const partay = document.getElementById("partyyyyy")
-  partay.addEventListener("click", () => {
-    var element = document.body;
-    element.classList.toggle("blink");
-    if (partay.innerText === "stOOOOPpp") {
-      partay.innerText = "partyyyyy";
-    } else {
-      partay.innerText = "stOOOOPpp";
-    }
-  });
+partay.addEventListener("click", () => {
+  var element = document.body;
+  element.classList.toggle("blink");
+  if (partay.innerText === "stOOOOPpp") {
+    partay.innerText = "partyyyyy";
+  } else {
+    partay.innerText = "stOOOOPpp";
+  }
+});
 function getWeekdaysArray() {
   let x = new Date("11/28/2021");
   const arr = [];
